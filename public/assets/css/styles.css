@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+h1,h2,h3,h4{
+	font-family: 'Righteous', 'Roboto',sans-serif;
+}
+
+input{
+	border-color: black;
+}
+
+
+body{
+	background-image: url("/assets/img/bg_dark.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+}
+
+.btn{
+	font-family: 'Righteous', 'Roboto',sans-serif;
+}
+
+.team-badge{
+	max-height: 40px;
+	max-width: 40px;
+	transition: all .2s ease-in-out;
+	filter: grayscale(200%);
+
+
+}
+.team-badge:hover{
+	transform: scale(1.5);
+	filter: grayscale(0%);
+	filter: brightness(100%);
+}
+
+.team-badge-mob{
+	max-height: 30px;
+	max-width: 30px;
+}
+
+.nav-pills{
+	font-weight: bold;
+}
+
+.nav-pills .nav-item .nav-link{
+	transition: all .1s ease-in-out;
+	color:white;
+}
+
+.nav-pills .nav-item .nav-link:hover{
+	background-color: lightgray;
+	color:black;
+	transform: scale(1.1);
+}
+
+.nav-pills .nav-item .current{
+	background-color: white;
+	color:black;
+}
+@media (min-width: 765px) { 
+	header{
+		height: 120px;
+		background-image: url('../img/bg_dark.jpg');
+		/*background-color: #24292e;*/
+	}
+}
+
+@media (max-width: 764px) { 
+	.mob-background{
+		background-image: url('../img/bg_dark.jpg');
+	}
+
+	header{
+		height: 80px;
+		background-image: url('../img/bg_dark.jpg');
+		/*background-color: #24292e;*/
+	}
+}
+
+
+
