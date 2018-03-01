@@ -36,10 +36,10 @@ class CreatePlayersTable extends Migration
             $table->tinyInteger('shooting')->default(60)->nullable($value = false);
             $table->tinyInteger('dribbling')->default(60)->nullable($value = false);
             $table->tinyInteger('defense')->default(60)->nullable($value = false);
-            $table->float('height')->default(1.70)->nullable($value = false);
-            $table->char('nationality',3)->nullable($value = false);
+            $table->float('height')->default(1.70)->nullable($value = true);
+            $table->char('nationality',3)->nullable($value = true);
             $table->char('language',2)->nullable($value = false);
-            $table->char('strong_foot',1)->nullable($value = false);
+            $table->char('strong_foot',1)->nullable($value = true)->default('N');
 
             $table->primary('username');
         });

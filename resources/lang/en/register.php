@@ -47,7 +47,8 @@ return [
     'dontMiss' => 'DON\'T MISS THIS!',
     'clickHere' => 'Like our Facebook Page and discover stats, videos, highlights and amazing deals on gamer stuff',
     'termsAndCookies' => 'By clickin on Register, you accept you read and agreed our <a href="#">Terms and Conditions</a> , including our <a href="#">use of Cookies</a>.',
-    '' => '',
-    '' => '',
+    'strongFoot' => 'Strong Foot',
+    'left' => 'Left Foot',
+    'right' => 'Right Foot'
 
 ];

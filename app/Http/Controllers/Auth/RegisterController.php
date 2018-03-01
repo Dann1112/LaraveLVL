@@ -85,7 +85,8 @@ class RegisterController extends Controller
             'position' => $data['position'],
             'nationality' => $data['nationality'],
             'language' => $data['language'],
-            'profile_picture' => $data['profile_picture']
+            'profile_picture' => $data['profile_picture'],
+            'strong_foot' => $data['strong_foot']
         ]);
     }
 }

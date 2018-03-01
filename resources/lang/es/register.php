@@ -47,17 +47,7 @@ return [
     'dontMiss' => '¡NO TE PIERDAS ESTO!',
     'clickHere' => 'Da click en Me Gusta y disfruta de estadísticas, videos, resumenes e increibles promociones en productos gamer',
     'termsAndCookies' => 'Al hacer click en Registrarse, aceptas haber leído y estar de acuerdo con nuestros <a href="#">Términos y Condiciones</a> , incluyendo nuestro <a href="#">uso de Cookies</a>.',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-
-
+    'strongFoot' => 'Pie Hábil',
+    'left' => 'Pie Izquierdo',
+    'right' => 'Pie Derecho'
 ];

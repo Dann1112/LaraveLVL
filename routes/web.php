@@ -15,9 +15,9 @@ Route::get('/blog',function(){
     return view('blog');
 });
 
-Route::get('/players/search','PlayersController@index');
+Route::get('/players/search','PlayerController@index');
 
-Route::get('/players/{username}','PlayersController@show');
+Route::get('/players/{username}','PlayerController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

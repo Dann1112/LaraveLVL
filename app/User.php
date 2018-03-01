@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
-    protected $table = 'users';
+    protected $table = 'players';
     public $primaryKey = 'username';
     public $incrementing = false;
     protected $keyType = 'string';
+    public $timestamps = false;
     use Notifiable;
 
     /**
@@ -20,7 +21,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password','name','last_name','dd','mm','yyyy','birth_date',
+        'gender','nationality','language','position','strong_foot','height','weight'
     ];
 
     /**

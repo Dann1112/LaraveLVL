@@ -96,12 +96,21 @@
                             </div>
                         </div>
 
-                        <!--GENERO-->
+                       <!--GENERO-->
                         <div class="form-group">
                             <label class="control-label">@lang('register.gender')<span class="text-danger"></span></label>
                             <div>
                                 <label><input name="gender" type="radio" value="M" checked >@lang('register.male')</label>
                                 <label><input name="gender" type="radio" value="F" >@lang('register.female')</label>
+                            </div>
+                        </div>
+
+                        <!--PIE-->
+                        <div class="form-group">
+                            <label class="control-label">@lang('register.strongFoot')<span class="text-danger"></span></label>
+                            <div>
+                                <label><input name="strong_foot" type="radio" value="L" checked >@lang('register.left')</label>
+                                <label><input name="strong_foot" type="radio" value="R" >@lang('register.right')</label>
                             </div>
                         </div>
 
