@@ -15,7 +15,7 @@ Route::get('/blog',function(){
     return view('blog');
 });
 
-Route::get('/players/search','PlayerController@index');
+Route::get('/search','PlayerController@search');
 
 Route::get('/players/{username}','PlayerController@show');
 Auth::routes();

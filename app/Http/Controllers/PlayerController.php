@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Player;
 
@@ -13,7 +14,7 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function search()
     {
         $players = Player::orderBy('overall', 'DESC')->paginate(15);
 
@@ -50,8 +51,9 @@ class PlayerController extends Controller
     public function show($username)
     {
 
-        $player_info = Player::find($username);
-        return view('player_profile',compact('player_info'));
+        $player_info = Player::findOrFail($username);
+        $profile_picture = Storage::url('profile_pictures/'.$username.'.png');
+        return view('player_profile',compact(array('player_info','profile_picture')));
     }
 
     /**

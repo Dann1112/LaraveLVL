@@ -89,11 +89,11 @@
 							<a class="nav-link " href="#">CONTACTO</a>
 						</li>
 						<!-- Authentication Links -->
-                        @guest
+						@guest
 							<li class="d-flex d-md-none">
-								<button class="btn btn-success"  href="{{ route('login') }}"  style="width:100%; font-weight: bold">
+								<button class="btn btn-success" type="submit" href="#" style="width:100%; font-weight: bold">
 									<i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</button>
-								<button class="btn btn-primary"  href="{{ route('register') }}" style="width:100%; font-weight: bold">
+								<button class="btn btn-primary"  type="submit" href="{{ route('register') }}" style="width:100%; font-weight: bold">
 									<i class="fas fa-edit mr-2"></i>REGISTRARSE</button>
 							</li>
                         @else
@@ -111,11 +111,15 @@
 	</div>
 
 	<!-- Session Data (Login or User Info) -->
+	@guest
 	<div class="col-0 col-md-2 p-0 d-none d-md-flex flex-column align-items-center justify-content-around">
-		<button class="btn btn-success disabled">
-			<i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesion</button>
-		<button class="btn btn-primary disabled">
-			<i class="fas fa-edit mr-2"></i>Registrarse</button>
+		<button class="btn btn-success"  type="submit" href="{{ route('login') }}"  style="font-weight: bold">
+			<i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</button>
+		<button class="btn btn-primary"  type="submit" href="{{ route('register') }}" style="font-weight: bold">
+			<i class="fas fa-edit mr-2"></i>REGISTRARSE</button>
 	</div>
+	@else
+
+	@endguest
 
 </header>

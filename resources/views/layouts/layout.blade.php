@@ -9,5 +9,4 @@
         @yield('content')
     </body>
     @include('..\partials\footer')
-    
 </html>

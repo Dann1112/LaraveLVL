@@ -12,7 +12,6 @@ class User extends Authenticatable
     public $primaryKey = 'username';
     public $incrementing = false;
     protected $keyType = 'string';
-    public $timestamps = false;
     use Notifiable;
 
     /**
@@ -22,7 +21,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username', 'email', 'password','name','last_name','dd','mm','yyyy','birth_date',
-        'gender','nationality','language','position','strong_foot','height','weight'
+        'gender','nationality','language','position','strong_foot','height','weight','created_at',
+        'updated_at','profile_picture'
     ];
 
     /**
@@ -31,6 +31,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
 }

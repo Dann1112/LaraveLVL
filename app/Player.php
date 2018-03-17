@@ -12,11 +12,5 @@ class Player extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
-    
-
-    public function scopeAgenteLibre($query){ // Para poder hacer esto : App\Jugador::AgenteLibre()->where(algo aqui);
-
-        Player::where('player','FA')->get();
-    }
 
 }
