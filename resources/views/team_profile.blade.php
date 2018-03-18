@@ -36,7 +36,118 @@
             
 
             <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">Aqui va la información del GENERAL</div>
+                    <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                        <section>
+                            <div class="container">
+                                <!-- Banners jogos e grafico de forma clube -->
+                                <div class="row justify-content-around my-3" style="max-height:180px">
+                        
+                                    <!-- Último jogo -->
+                                    
+                                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center justify-content-between border rounded py-3">
+                                        <h4>Ultimo Juego</h4>        
+
+                                            <div class="d-flex mb-3">
+                                                <div class="text-center">
+                                                    <img style="height:auto; width:auto; max-height:50px; max-width:50px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                </div>
+
+                                                <div class="text-center mx-3">
+                                                    <span style="font-size: 2em; color:white">2 : 0</span><br>
+                                                    <span >17/Marzo</span><br>
+                                                    <span >20:30hrs</span>
+                                                </div>
+                            
+                                                <div class="text-center">
+                                                    <img style="height:auto; width:auto; max-height:50px; max-width:50px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+                        
+                                    <!-- Próximo jogo -->
+                                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center justify-content-between border rounded py-3">
+                                        <h4>Proximo Juego</h4>        
+                                            
+
+
+                                            <div class="d-flex mb-3">
+                                                <div class="text-center">
+                                                    <img style="height:auto; width:auto; max-height:50px; max-width:50px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                </div>
+
+                                                <div class="text-center mx-3">
+                                                    <span style="font-size: 2em; color:white">VS</span><br>
+                                                    <span >17/Marzo</span><br>
+                                                    <span >20:30hrs</span>
+                                                </div>
+                            
+                                                <div class="text-center">
+                                                    <img style="height:auto; width:auto; max-height:50px; max-width:50px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+                        
+                                    <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-between border rounded py-3">
+                                        <h4>Forma</h4>        
+                                            
+
+
+                                            <div class="d-flex mb-3">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <div class="d-flex flex-column">
+                                                            <img class="mb-1" style="height:auto; width:auto; max-height:40px; max-width:40px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                            <div class="rounded-circle d-flex justify-content-center align-items-center" style="background-color: greenyellow; height:40px; width:40px">
+                                                                <span style="color:black; font-weight: bold">3:1</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                            <div class="d-flex flex-column">
+                                                                <img class="mb-1" style="height:auto; width:auto; max-height:40px; max-width:40px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                                <div class="rounded-circle d-flex justify-content-center align-items-center" style="background-color: greenyellow; height:40px; width:40px">
+                                                                    <span style="color:black; font-weight: bold">3:1</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                                <div class="d-flex flex-column">
+                                                                    <img class="mb-1" style="height:auto; width:auto; max-height:40px; max-width:40px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                                    <div class="rounded-circle d-flex justify-content-center align-items-center" style="background-color: orange; height:40px; width:40px">
+                                                                        <span style="color:black; font-weight: bold">1:1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                    <div class="d-flex flex-column">
+                                                                        <img class="mb-1" style="height:auto; width:auto; max-height:40px; max-width:40px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                                        <div class="rounded-circle d-flex justify-content-center align-items-center" style="background-color: red; height:40px; width:40px">
+                                                                            <span style="color:black; font-weight: bold">0:1</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                        <div class="d-flex flex-column">
+                                                                            <img class="mb-1" style="height:auto; width:auto; max-height:40px; max-width:40px" src="/assets/img/logos/logo.png"  alt="TeamName">
+                                                                            <div class="rounded-circle d-flex justify-content-center align-items-center" style="background-color: greenyellow; height:40px; width:40px">
+                                                                                <span style="color:black; font-weight: bold">3:1</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                </ul>
+                                            </div>
+
+
+                                    </div>
+                        
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                     <div class="tab-pane fade" id="plantilla" role="tabpanel" aria-labelledby="plantilla-tab">Plantilla</div>
                     <div class="tab-pane fade" id="temporada" role="tabpanel" aria-labelledby="temporada-tab">Temporada</div>
                     <div class="tab-pane fade" id="estadisticas" role="tabpanel" aria-labelledby="estadisticas-tab">Estadisticas</div>
