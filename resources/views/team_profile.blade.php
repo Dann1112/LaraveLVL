@@ -24,7 +24,7 @@
                     <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">DATOS GENERALES</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" id="plantilla-tab" data-toggle="tab" href="#plantilla" role="tab" aria-controls="general" aria-selected="true">PLANTILLA</a>
+                        <a class="nav-link" id="plantilla-tab" data-toggle="tab" href="#plantilla" role="tab" aria-controls="general" aria-selected="true">PLANTILLA ACTUAL</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" id="temporada-tab" data-toggle="tab" href="#temporada" role="tab" aria-controls="general" aria-selected="true">TEMPORADA ACTUAL</a>
@@ -37,7 +37,10 @@
 
             <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                        <section>
+                        <section class="mb-3">
+                                <hr class="border" style="color:white">
+                                <h3 class="text-center" style="width:100%">Partidos</h3>
+                                <hr class="border" style="color:white">
                             <div class="container">
                                 <!-- Banners jogos e grafico de forma clube -->
                                 <div class="row justify-content-around my-3" style="max-height:180px">
@@ -147,11 +150,88 @@
                                 </div>
                             </div>
                         </section>
-                    </div>
-                    <div class="tab-pane fade" id="plantilla" role="tabpanel" aria-labelledby="plantilla-tab">Plantilla</div>
-                    <div class="tab-pane fade" id="temporada" role="tabpanel" aria-labelledby="temporada-tab">Temporada</div>
-                    <div class="tab-pane fade" id="estadisticas" role="tabpanel" aria-labelledby="estadisticas-tab">Estadisticas</div>
-                  </div>
+
+                        <section class="mb-3">
+                                <hr class="border" style="color:white">
+                                <h3 class="text-center" style="width:100%">Ranking del Club</h3>
+                            <hr class="border" style="color:white">
+                            <div class="row d-flex justify-content-around">
+                                    <div class="card col-3 text-center">
+                                            <h4 class="mt-2" style="color:white">GOLEADOR</h4>
+                                            <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                            <div class="card-body">
+                                                
+                                              <p class="card-text">Dann1112<br>15 goles</p>
+                                            </div>
+                                          </div>
+                                          <div class="card col-3 text-center">
+                                                <h4 class="mt-2" style="color:white">ASISTIDOR</h4>
+                                                <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                                <div class="card-body">
+                                                    
+                                                  <p class="card-text">Spirex1678<br>12 asistencias</p>
+                                                </div>
+                                              </div>
+                                              <div class="card col-3 text-center">
+                                                    <h4 class="mt-2" style="color:white">THE BEST</h4>
+                                                    <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        
+                                                      <p class="card-text">Myrod45<br>Calif. Promedio <br> 8.7</p>
+                                                    </div>
+                                                  </div>
+                            </div>
+                        </section>
+                        
+                        <section class="mb-3">
+                                <hr class="border" style="color:white">
+                                <h3 class="text-center" style="width:100%">Ultimas Noticias</h3>
+                            <hr class="border" style="color:white">
+                            <div class="row d-flex justify-content-around">
+                                    <div class="card col-3">
+                                            <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                            <div class="card-body">
+                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                          </div>
+                                          <div class="card col-3">
+                                                <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                                <div class="card-body">
+                                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                </div>
+                                              </div>
+                                              <div class="card col-3">
+                                                    <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                                    <div class="card-body">
+                                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                    </div>
+                                                  </div>
+                            </div>
+                        </section>
+            </div>
+
+            <div class="tab-pane fade" id="plantilla" role="tabpanel" aria-labelledby="plantilla-tab">
+                <div class="container my-3">
+                        <table class="table table-dark table-striped table-hover table-responsive-md">
+                                <thead class="thead-dark">
+                                  <tr class="text-center">
+                                    <th scope="col">@lang('players.picture')</th><!-- FOTO -->
+                                    <th scope="col">@lang('players.nationality')</th><!-- NACIONALIDAD -->
+                                    <th scope="col">@lang('players.name')</th>
+                                    <th scope="col">@lang('players.overall')</th>
+                                    <th scope="col">@lang('players.position')</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                    
+                                  
+                                </tbody>
+                              </table>
+                        </div>
+            </div>
+            <div class="tab-pane fade" id="temporada" role="tabpanel" aria-labelledby="temporada-tab">Temporada</div>
+            <div class="tab-pane fade" id="estadisticas" role="tabpanel" aria-labelledby="estadisticas-tab">Estadisticas</div>
+            </div>
                 </div>
 </div>
 
