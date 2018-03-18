@@ -27,6 +27,11 @@ class CreateTeamsTable extends Migration
             $table->string('logo');
             $table->date('created_at');
             $table->date('updated_at');
+            $table->string('twitter');
+            $table->string('facebook');
+            $table->string('twitch');
+            $table->string('youtube');
+            $table->string('instagram');
             $table->primary('name');
             $table->unique('manager');
             $table->unique('comanager');

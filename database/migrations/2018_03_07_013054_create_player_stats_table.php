@@ -15,6 +15,9 @@ class CreatePlayerStatsTable extends Migration
     {
         Schema::create('player_stats', function (Blueprint $table) {
             $table->string('player');
+            $table->string('season');
+            $table->string('team');
+            $table->string('competition');
             $table->tinyInteger('goals')->default(0)->unsigned();
             $table->tinyInteger('assists')->default(0)->unsigned();
             $table->tinyInteger('games_played')->default(0)->unsigned();
