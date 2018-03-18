@@ -229,10 +229,48 @@
                               </table>
                         </div>
             </div>
-            <div class="tab-pane fade" id="temporada" role="tabpanel" aria-labelledby="temporada-tab">Temporada</div>
-            <div class="tab-pane fade" id="estadisticas" role="tabpanel" aria-labelledby="estadisticas-tab">Estadisticas</div>
+            <div class="tab-pane fade" id="temporada" role="tabpanel" aria-labelledby="temporada-tab">
+                    <div class="container my-3">
+                        <section>
+                            <hr class="border" style="color:white">
+                            <h3 class="text-center" style="width:100%">Ultimos Partidos</h3>
+                            <hr class="border" style="color:white">
+                            <table class="table table-dark table-striped table-hover table-responsive-md">
+                                    <thead class="thead-dark">
+                                      <tr class="text-center">
+                                        <th scope="col">COMPETICION</th><!-- FOTO -->
+                                        <th scope="col">RESULTADO</th><!-- NACIONALIDAD -->
+                                        <th scope="col">FECHA</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                        
+                                      
+                                    </tbody>
+                                  </table>
+                        </section>
+                        <section class="my-3">
+                                <hr class="border" style="color:white">
+                                <h3 class="text-center" style="width:100%">Proximos Partidos</h3>
+                                <hr class="border" style="color:white">
+                                <table class="table table-dark table-striped table-hover table-responsive-md">
+                                        <thead class="thead-dark">
+                                          <tr class="text-center">
+                                            <th scope="col">COMPETICION</th><!-- FOTO -->
+                                            <th scope="col">ENCUENTRO</th><!-- NACIONALIDAD -->
+                                            <th scope="col">FECHA</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                            
+                                          
+                                        </tbody>
+                                      </table>
+                            </section>
+                            </div>
             </div>
-                </div>
+            <div class="tab-pane fade" id="estadisticas" role="tabpanel" aria-labelledby="estadisticas-tab">
+            </div>
 </div>
 
 @endsection
