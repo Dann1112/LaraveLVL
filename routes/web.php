@@ -2,7 +2,7 @@
 
 Route::get('/',function(){
 
-    return view('team_profile');
+    return view('control_panel');
 });
 
 Route::get('/blog',function(){
