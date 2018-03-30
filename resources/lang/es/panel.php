@@ -43,5 +43,6 @@
         'fixtures' => 'Partidos',
         'matchday' => 'Jornada',
         'team' => 'Equipo',
-        'new_inscription' => 'Nueva Inscripcion'
+        'new_inscription' => 'Nueva Inscripcion',
+        'inscriptions' => 'Inscripciones'
     ];

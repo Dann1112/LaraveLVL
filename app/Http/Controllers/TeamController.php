@@ -86,10 +86,37 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        $team_info = Team::findOrFail($team);
-        $logo = Storage::url('team_logo/'.$team.'.png');
-        
-        return view('team_profile',compact(array('team_info','logo')));
+        $next_fixture = \App\Fixture::whereRaw('? IN (home_team, away_team) AND status = 0',$team->name)->oldest('date')->first();
+        $last_fixture = \App\Fixture::whereRaw('? IN (home_team, away_team) AND status = 2',$team->name)->latest('date')->first();
+        $next_home_team = null;
+        $next_away_team = null;
+        $last_home_team = null;
+        $last_away_team = null;
+
+        if($next_fixture){
+            $next_home_team = \App\Team::where('name',$next_fixture->home_team)->first();
+            $next_away_team = \App\Team::where('name',$next_fixture->away_team)->first();
+        }
+
+        if($last_fixture){
+            $last_home_team = \App\Team::where('name',$last_fixture->home_team)->first();
+            $last_away_team = \App\Team::where('name',$last_fixture->away_team)->first();
+        }
+
+        $last_5_teams = array();
+
+        $last_5_matches = \App\Fixture::whereRaw('? IN (home_team, away_team) AND status = 2', $team->name)->orderBy('date','desc')->take(5)->get();
+        foreach($last_5_matches as $match){
+            if($match->home_team == $team->name)
+                array_push($last_5_teams,$match->away_team);
+            else   
+                array_push($last_5_teams,$match->home_team);
+        }
+
+        $last_5_teams = \App\Team::whereIn('name',$last_5_teams)->take(5)->get();
+
+        return view('team_profile',compact('team','next_fixture','last_fixture','next_home_team',
+        'next_away_team','last_home_team','last_away_team', 'last_5_teams', 'last_5_matches'));
     }
 
     /**

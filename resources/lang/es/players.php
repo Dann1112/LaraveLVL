@@ -28,6 +28,7 @@ return [
     'spanish' => 'Español',
     'nationality' => 'Nacionalidad',
     'overall' => 'General',
+    'overview' => 'Overview',
     'search' => 'Buscar',
     'clean' => 'Limpiar',
     'picture' => 'Foto',

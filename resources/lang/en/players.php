@@ -28,6 +28,7 @@ return [
     'spanish' => 'Spanish',
     'nationality' => 'Nationality',
     'overall' => 'Overall',
+    'overview' => 'Overview',
     'search' => 'Search',
     'clean' => 'Clean',
     'picture' => 'Picture',

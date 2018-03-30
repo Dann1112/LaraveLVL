@@ -44,5 +44,6 @@
         'fixtures' => 'Fixtures',
         'matchday' => 'Matchday',
         'team' => 'Team',
-        'new_inscription' => 'New Inscription'
+        'new_inscription' => 'New Inscription',
+        'inscriptions' => 'Inscriptions'
     ];
