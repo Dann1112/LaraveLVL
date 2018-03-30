@@ -41,5 +41,7 @@
         'away' => 'Visitante',
         'choose_option' => 'Elige una opcion',
         'fixtures' => 'Partidos',
-        'matchday' => 'Jornada'
+        'matchday' => 'Jornada',
+        'team' => 'Equipo',
+        'new_inscription' => 'Nueva Inscripcion'
     ];

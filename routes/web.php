@@ -29,6 +29,10 @@ Route::post('/panel/competitions','CompetitionsController@store');
 Route::get('/panel/fixtures','FixturesController@create')->name('fixtures');
 Route::post('/panel/fixtures','FixturesController@store');
 
+Route::get('/panel/inscriptions','StandingsController@create')->name('inscriptions');
+Route::post('/panel/inscriptions','StandingsController@store');
+
+
 Route::get('/logout','SessionsController@destroy');
 
 

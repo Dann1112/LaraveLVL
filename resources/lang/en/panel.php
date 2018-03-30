@@ -42,5 +42,7 @@
         'away' => 'Away',
         'choose_option' => 'Choose an option',
         'fixtures' => 'Fixtures',
-        'matchday' => 'Matchday'
+        'matchday' => 'Matchday',
+        'team' => 'Team',
+        'new_inscription' => 'New Inscription'
     ];
