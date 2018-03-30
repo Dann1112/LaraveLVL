@@ -80,7 +80,7 @@
 							<a class="nav-link " href="#">CLASIFICACION</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="#">JUGADORES</a>
+							<a class="nav-link " href="{{route('players')}}">JUGADORES</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link " href="#">RANKING</a>
@@ -91,10 +91,8 @@
 						<!-- Authentication Links -->
 						@guest
 							<li class="d-flex d-md-none">
-								<button class="btn btn-success" type="submit" href="#" style="width:100%; font-weight: bold">
-									<i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</button>
-								<button class="btn btn-primary"  type="submit" href="{{ route('register') }}" style="width:100%; font-weight: bold">
-									<i class="fas fa-edit mr-2"></i>REGISTRARSE</button>
+								<a href="{{route('login')}}" class="btn btn-success" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</a>
+								<a href="{{route('register')}}" class="btn btn-success" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>REGISTRARSE</a>
 							</li>
                         @else
                             
@@ -111,15 +109,35 @@
 	</div>
 
 	<!-- Session Data (Login or User Info) -->
-	@guest
-	<div class="col-0 col-md-2 p-0 d-none d-md-flex flex-column align-items-center justify-content-around">
-		<button class="btn btn-success"  type="submit" href="{{ route('login') }}"  style="font-weight: bold">
-			<i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</button>
-		<button class="btn btn-primary"  type="submit" href="{{ route('register') }}" style="font-weight: bold">
-			<i class="fas fa-edit mr-2"></i>REGISTRARSE</button>
-	</div>
-	@else
+	@if(Auth::check())
+	<div class="d-flex col-2 text-center">
+			<div class="my-auto">
+								<div class="d-flex">
+									<div class="btn-group mx-auto">
+										<button type="button" class="btn btn-outline-light">
+										<img class="rounded-circle" src="/storage/{{auth()->user()->profile_picture}}" style="max-height: 50px"></button>
+											<button type="button" class="btn btn-outline-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span class="sr-only">Toggle Dropdown</span>
+											</button>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="/players/{{Auth::user()->username}}"><i class="fas fa-user mr-2"></i>Mi Perfil</a>
+												<a class="dropdown-item" href="#"><i class="fas fa-envelope mr-2"></i>Mis Mensajes</a>
+												<a class="dropdown-item" href="#"><i class="fas fa-edit mr-2"></i>Mis Contratos</a>
+												<div class="dropdown-divider"></div>
+												<a class="dropdown-item bg-danger" href="#" style="color:white"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión</a>
+											</div>
+										</div>
+									</div>
+								<span style="color:white; font-weight: bold">{{Auth::user()->username}}</span><br>
+								</div>
+							</div>
+						</div>
 
-	@endguest
+	@else
+	<div class="col-0 col-md-2 p-0 d-none d-md-flex flex-column align-items-center justify-content-around">
+			<a href="{{route('login')}}" class="btn btn-success" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</a>
+			<a href="{{route('register')}}" class="btn btn-info" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>REGISTRARSE</a>
+	</div>
+	@endif
 
 </header>

@@ -14,11 +14,18 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search()
+    public function showAll()
     {
         $players = Player::orderBy('overall', 'DESC')->paginate(15);
 
         return view('players',compact('players'));
+    }
+
+    public function editProfile(){
+
+        $player = auth()->user();
+
+        return view('players.edit_profile',compact('player'));
     }
 
     /**
@@ -48,12 +55,9 @@ class PlayerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($username)
+    public function show(Player $player)
     {
-
-        $player_info = Player::findOrFail($username);
-        $profile_picture = Storage::url('profile_pictures/'.$username.'.png');
-        return view('player_profile',compact(array('player_info','profile_picture')));
+        return view('players.profile',compact(array('player')));
     }
 
     /**

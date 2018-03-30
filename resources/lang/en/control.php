@@ -2,8 +2,7 @@
     return[
         'title'=>'Control Panel',
         'teams'=>'Teams',
-        'team' => 'Team',
-        'new'=>'New',
+        'new_team'=>'New Team',
         'edit' => 'Edit',
         'delete' => 'Delete',
 

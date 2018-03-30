@@ -20,20 +20,25 @@
                 </div>
                 <div class="tab-content col-9" id="v-pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="tab-pane fade show active" id="tab-team" role="tabpanel" aria-labelledby="tab-team">
                         <hr class="border" style="color:white">
-                        <h3 class="text-center" style="width:100%">New Team</h3>
+                        <h3 class="text-center" style="width:100%">@lang('control.new_team')</h3>
                         <hr class="border" style="color:white">
-                      <form class="text-center">
+
+
+                      <form class="text-center" method="POST" action="/teams">
+
+                        {{csrf_field()}}
+
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Team Name&nbsp<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control col-10" placeholder="Team Name" required>
+                              <input type="text" class="form-control col-10" name="name" required>
                               <br>
                             </div>
       
                             <div class="form-row text-center my-2">
                             <label class="col-form-label col-2 ">Abbreviation&nbsp<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control col-10" placeholder="ABV" style="max-width:100px" required>
+                              <input type="text" class="form-control col-10" name="abbreviation" style="max-width:100px" required>
                             </div>
       
                             <div class="form-row text-center my-2">
@@ -44,57 +49,57 @@
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Manager&nbsp<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control col-10" required>
+                              <input type="text" class="form-control col-10" name="manager" required>
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">CoManager</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="comanager">
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Streaming Channel</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="streaming_channel" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Primary Color&nbsp<span class="text-danger">*</span></label>
-                              <input type="text" class="form-control col-10" placeholder="In RGB (255,255,255), can't be white"  required>
+                              <input type="text" class="form-control col-10" placeholder="In RGB (255,255,255), can't be white" name="primary_color" required>
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Secondary Color</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="secondary_color" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Logo&nbsp<span class="text-danger">*</span></label>
-                              <input type="file" class="form-control-file col-10"  required>
+                              <input type="file" class="form-control-file col-10" name="logo" required>
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Twitter</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="twitter" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Facebook</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="facebook" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Twitch</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="twitch" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Youtube</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="youtube" >
                             </div>
       
                             <div class="form-row text-center my-2">
                               <label class="col-form-label col-2">Instagram</label>
-                              <input type="text" class="form-control col-10">
+                              <input type="text" class="form-control col-10" name="instagram" >
                             </div>
       
                             <button type="submit" class="btn btn-primary btn-lg my-3" style="width:50%">Save</button>
@@ -185,6 +190,7 @@
                               </form>
                         </div>
                     </div>
+
                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">

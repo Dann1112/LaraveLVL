@@ -144,7 +144,7 @@
 
         <div class="col-md-8 col-12 px-md-3 py-md-0 py-3 px-3" style="background-color: black">
 
-            @extends('layouts/alerts')
+            @include('layouts/errors')
 
           <table class="table table-dark table-striped table-hover table-responsive-md">
             <thead class="thead-dark">
@@ -160,16 +160,25 @@
             <tbody>
 
               @foreach($players->all() as $player)
-                <tr class="text-center">
-                <th scope="row"><img src="storage/profile_pictures/{{$player->profile_picture}}" style="max-height: 30px; max-width: 30px"></th>
+            <a href="players/{{$player->username}}">
+            <tr class="text-center clickable-row" data-href='players/{{$player->username}}' style="cursor:pointer">
+                <th scope="row"><img src="storage/{{$player->profile_picture}}" style="max-height: 30px; max-width: 30px"></th>
                 <td><img src="/assets/img/flags/{{$player->nationality.'@'}}3x.png" alt="{{$player->nationality}}" style="max-height: 30px; max-width: 30px"></td>
-                <td><a href="/players/{{ $player->username }}/">{{ $player->username }}</a></td>
+                <td>{{$player->username}}</td>
                   <td>{{$player->overall}}</td>
-                  <td><span class="badge badge-success">{{$player->position}}</span>&#160<span class="badge badge-success">{{$player->second_position}}</span>&#160<span class="badge badge-success">{{$player->third_position}}</span></td>
+                  <td>@include('partials.positions')</td>
                   <td><img src="assets/img/teams/azathoth.png" style="max-height: 30px; max-width: 30px">
                   
-                </tr>
+                </tr></a>
               @endforeach
+            
+              <script>
+              jQuery(document).ready(function($) {
+                $(".clickable-row").click(function() {
+                    window.location = $(this).data("href");
+                });
+            });
+          </script>
             </tbody>
           </table>
           {{ $players->links() }}

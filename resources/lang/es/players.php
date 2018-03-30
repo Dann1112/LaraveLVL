@@ -31,5 +31,8 @@ return [
     'search' => 'Buscar',
     'clean' => 'Limpiar',
     'picture' => 'Foto',
-    'preferredPositions' => 'Posiciones Preferidas'
+    'preferredPositions' => 'Posiciones Preferidas',
+    'edit_profile' => 'Editar Perfil',
+    'messages' => 'Mensajes',
+    'contracts' => 'Contratos'
 ];

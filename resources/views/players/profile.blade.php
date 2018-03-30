@@ -6,12 +6,12 @@
 
        <div class="row p-3">
       <div class="col-3 text-center rounded-circle p-3" style="background-image: url('/assets/img/bg_light.jpg'); height:300px">
-      <img class="image-fluid" alt="{{$player_info->username}}" src="{{$profile_picture}}" style="height:100%; max-width:100%; ">
+      <img class="image-fluid" alt="{{$player->username}}" src="/storage/{{$player->profile_picture}}" style="height:100%; max-width:100%; ">
       </div>
       <div class="col-9 text-center my-auto" style="">
         <div class="d-flex justify-content-center">
-          <h1 class="display-3 my-auto mx-2" style="color:white">{{$player_info->username}}</h1>
-          <img class="rounded my-auto" src="/assets/img/flags/{{$player_info->nationality.'@'}}3x.png" alt="{{$player_info->nationality}}" style="height:50px; width:100px">
+          <h1 class="display-3 my-auto mx-2" style="color:white">{{$player->username}}</h1>
+          <img class="rounded my-auto" src="/assets/img/flags/{{$player->nationality.'@'}}3x.png" alt="{{$player->nationality}}" style="height:50px; width:100px">
           <br>
         </div>
       </div>
@@ -26,16 +26,16 @@
             <li class="list-group-item">@lang('profile.team'):<br>
               <img src="/assets/img/equipos/azathoth.png" style="width:30px; height: 30px">Azathoth eSports</li>
             <li class="list-group-item">@lang('profile.positions'):<br>
-              <span class="badge badge-success">{{$player_info->position}}</span>
-            @if($player_info->second_position)
-              <span class="badge badge-success">{{$player_info->second_position}}</span>
+              @include('partials.positions')
+            @if($player->second_position)
+              <span class="badge badge-success">{{$player->second_position}}</span>
             @endif
-            @if($player_info->third_position)
-              <span class="badge badge-success">{{$player_info->third_position}}</span>
+            @if($player->third_position)
+              <span class="badge badge-success">{{$player->third_position}}</span>
               @endif
             </li>
-            <li class="list-group-item">@lang('profile.birth_date'):<br>{{$player_info->birth_date}}</li>
-            <li class="list-group-item">@lang('profile.height'):<br>{{$player_info->height}} cm</li>
+            <li class="list-group-item">@lang('profile.birth_date'):<br>{{$player->birth_date}}</li>
+            <li class="list-group-item">@lang('profile.height'):<br>{{$player->height}} cm</li>
             <li class="list-group-item">@lang('profile.weight'):<br>63 kg</li>
           </ul>
         </div>

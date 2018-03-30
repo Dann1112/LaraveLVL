@@ -6,7 +6,7 @@
     <div class="container py-5 d-flex align-items-center justify-content-center">
         <img class="mr-5" style="height:auto; width:auto; max-height:200px; max-width:200px" src="/assets/img/logos/logo.png"  alt="TeamName">
         <div class="text-center">
-            <h1 class="display-3">Wolfgang United</h1>
+        <h1 class="display-3">{{team_info->name}}</h1>
             <ul class="inline-list mx-auto p-0" style="font-size:4em; color:white">
                 <li class="list-inline-item"><i class="fab fa-facebook-f" data-fa-transform="shrink-3.5 down-1.6 right-1.25" data-fa-mask="fas fa-circle"></i></li>
                 <li class="list-inline-item"><i class="fab fa-twitter" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></li>

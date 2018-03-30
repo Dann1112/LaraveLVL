@@ -20,7 +20,7 @@ class CreateInboxTable extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('subject');
-            $table->string('body');
+            $table->text('body');
             $table->timeTz('last');
             $table->softDeletes();
         });

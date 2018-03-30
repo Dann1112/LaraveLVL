@@ -8,12 +8,17 @@ use Illuminate\Database\Eloquent\SoftDeletes ;
 class Team extends Model
 {
 
-    use SoftDeletes; 
-
     public $primaryKey = 'name';
-    public $keyType = string;
+    public $keyType = 'string';
     public $incrementing = false;
     protected $dates = ['deleted_at'];
+
+    protected $fillable = [
+        'name', 'abbreviation', 'manager', 'comanager',
+        'streaming_channel', 'primary_color', 'secondary_color','country',
+        'logo','twitter','facebook','twitch','youtube',
+        'instagram'
+    ];
 
     
 }

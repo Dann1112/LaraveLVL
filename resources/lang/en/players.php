@@ -31,5 +31,8 @@ return [
     'search' => 'Search',
     'clean' => 'Clean',
     'picture' => 'Picture',
-    'preferredPositions' => 'Preferred Positions'
+    'preferredPositions' => 'Preferred Positions',
+    'edit_profile' => 'Edit Profile',
+    'messages' => 'Messages',
+    'contracts' => 'Contracts'
 ];
