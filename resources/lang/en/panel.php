@@ -26,5 +26,21 @@
         'not_finished' => 'Not Finished',
         'prize' => 'Prize',
         'champion' => 'Champion',
-        'competitions' => 'Competitions'
+        'competitions' => 'Competitions',
+        'new_fixture' => 'New Fixture',
+        'competition' => 'Competition',
+        'status' => 'Status',
+        'unstarted' => 'Unstarted',
+        'live' => 'Live',
+        'postponed' => 'Postponed',
+        'finished' => 'Finished',
+        'date' => 'Date',
+        'time' => 'Time',
+        'home' => 'Home',
+        'home_team' => 'Home Team',
+        'away_team' => 'Away Team',
+        'away' => 'Away',
+        'choose_option' => 'Choose an option',
+        'fixtures' => 'Fixtures',
+        'matchday' => 'Matchday'
     ];

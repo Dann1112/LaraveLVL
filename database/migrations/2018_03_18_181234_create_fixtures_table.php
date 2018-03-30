@@ -15,15 +15,15 @@ class CreateFixturesTable extends Migration
     {
         Schema::create('fixtures', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('season');
-            $table->string('competition');
-            $table->date('date');
-            $table->timeTz('time');
-            $table->string('home_team');
-            $table->integer('home_goals');
-            $table->integer('away_goals');
-            $table->string('away_team');
-            $table->string('status');
+            $table->string('competition')->nullable(false)->default('0');
+            $table->unsignedTinyInteger('matchday')->nullable(true);
+            $table->date('date')->nullable(false);
+            $table->timeTz('time')->nullable(false);
+            $table->string('home_team')->nullable(false);
+            $table->integer('home_goals')->nullable(false)->default(0);
+            $table->integer('away_goals')->nullable(false)->default(0);
+            $table->string('away_team')->nullable(false);
+            $table->string('status')->nullable(false)->default(0);
         });
     }
 

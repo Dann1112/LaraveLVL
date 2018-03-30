@@ -16,6 +16,7 @@ class CreateCompetitionsTable extends Migration
         Schema::create('competitions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',50);
+            $table->string('status',1)->nullable(false)->default(0);
             $table->date('start_date')->nullable(false);
             $table->date('end_date')->nullable(true);
             $table->unsignedInteger('prize')->default(0)->nullable(true);;

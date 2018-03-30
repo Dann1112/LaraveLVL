@@ -27,5 +27,19 @@
         'not_finished' => 'No Finalizado',
         'prize' => 'Premio',
         'champion' => 'Campeon',
-        'competitions' => 'Competencias'
+        'competitions' => 'Competencias',
+        'new_fixture' => 'Nuevo Juego',
+        'competition' => 'Competencia',
+        'status' => 'Status',
+        'unstarted' => 'No Comenzado',
+        'live' => 'En Vivo',
+        'postponed' => 'Pospuesto',
+        'finished' => 'Finalizado',
+        'date' => 'Fecha',
+        'time' => 'Hora',
+        'home' => 'Local',
+        'away' => 'Visitante',
+        'choose_option' => 'Elige una opcion',
+        'fixtures' => 'Partidos',
+        'matchday' => 'Jornada'
     ];
