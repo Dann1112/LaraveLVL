@@ -9,29 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
-/*
-    protected function validator(array $data)
-    {
-
-        
-        return Validator::make($data, [
-            'username' => array(
-                            'required','string','min:3','max:16','unique:players',
-                            'regex:/^[a-z\d_-]{3,16}$/i'),
-            'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:5|max:15|confirmed',
-            'name' => array('required','string','max:55',
-                            'regex:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]+$/u'),
-            'last_name' => array('required','string','max:55',
-                            'regex:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]+$/u'),
-            'gender' => array( 'required','string', Rule::in(['M', 'F'])),
-            'position' => array( 'required','string', Rule::in($positions)),
-            'nationality' => 'required|max:3',
-            'profile_picture' => 'file|image',
-            
-        ]);
-    }
-*/
 
     /**
      * Display a listing of the resource.
@@ -59,34 +36,47 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+
+    public function store(){
+
+        //Validates the form
+        $this->validate(request(),[
+            'name' => array(
+                'required','string','min:3','max:25','unique:teams',
+                'regex:/^[a-z\d_ -]{3,25}$/i'),
+            'abbreviation' => 'required|string|max:3',
+            'manager' => 'required|string',
+            'logo' => 'file|image'
+
+        ]);
+
+        //Creates and Saves the team
+
+        Storage::putFileAs(
+            '/public/team_logos',
+            request()->file('logo'),
+            request('name').'.'.request()->file('logo')->getClientOriginalExtension());   
+
+        Team::create([
+            'name' => request('name'),
+            'abbreviation' => request('abbreviation'),
+            'manager' => request('manager'),
+            'comanager' => request('comanager'),
+            'streaming_channel' => request('streaming_channel'),
+            'primary_color' => request('primary_color'),
+            'logo' => 'team_logos/'.request('name').'.'.request()->file('logo')->getClientOriginalExtension(),
+            'facebook' => request('facebook'),
+            'instagram' => request('instagram'),
+            'twitter' => request('twitter'),
+            'twitch' => request('twitch'),
+            'youtube' => request('youtube')]);
+
+        //Redirects
+
+        return redirect()->home();
         
-        $team = new \App\Team;
-
-        request('logo')->storeAs(
-            'public/team_logos', request('name')
-        );
-
-        $team->name = request('name');
-        $team->abbreviation = request('abbreviation');
-        $team->manager = request('manager');
-        $team->comanager = request('comanager');
-        $team->streaming_channel = request('streaming_channel');
-        $team->primary_color = request('primary_color');
-        $team->secondary_color = request('secondary_color');
-        $team->country = request('country');
-        $team->logo = request('name').'.';
-        $team->twitter = request('twitter');
-        $team->facebook = request('facebook');
-        $team->twitch = request('twitch');
-        $team->youtube = request('youtube');
-        $team->instagram = request('instagram');
-
-        $team->save();
-
-        return redirect('/');
     }
+
 
     /**
      * Display the specified resource.

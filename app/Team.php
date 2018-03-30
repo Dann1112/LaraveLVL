@@ -15,7 +15,7 @@ class Team extends Model
 
     protected $fillable = [
         'name', 'abbreviation', 'manager', 'comanager',
-        'streaming_channel', 'primary_color', 'secondary_color','country',
+        'streaming_channel', 'primary_color',
         'logo','twitter','facebook','twitch','youtube',
         'instagram'
     ];

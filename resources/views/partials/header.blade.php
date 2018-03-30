@@ -120,7 +120,7 @@
 												<span class="sr-only">Toggle Dropdown</span>
 											</button>
 											<div class="dropdown-menu">
-												<a class="dropdown-item" href="/players/{{Auth::user()->username}}"><i class="fas fa-user mr-2"></i>Mi Perfil</a>
+												<a class="dropdown-item" href="{{route('edit_profile')}}"><i class="fas fa-user mr-2"></i>Mi Perfil</a>
 												<a class="dropdown-item" href="#"><i class="fas fa-envelope mr-2"></i>Mis Mensajes</a>
 												<a class="dropdown-item" href="#"><i class="fas fa-edit mr-2"></i>Mis Contratos</a>
 												<div class="dropdown-divider"></div>

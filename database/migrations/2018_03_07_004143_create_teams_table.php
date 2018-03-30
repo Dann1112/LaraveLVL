@@ -21,8 +21,6 @@ class CreateTeamsTable extends Migration
             $table->string('comanager',50)->nullable();;
             $table->string('streaming_channel',255)->nullable(true);
             $table->string('primary_color')->nullable(true);
-            $table->string('secondary_color')->nullable(true);
-            $table->char('country',2)->nullable(true);
             $table->string('logo')->nullable(true);
             $table->date('created_at')->nullable(true);
             $table->date('updated_at')->nullable(true);

@@ -94,14 +94,14 @@
 
             <hr class="border" style="color:white">
 
-        <div class="form-inline my-2">
+        <div class="form-inline my-3">
             <label for="height" style="min-width:200px">@lang('edit_profile.height')&nbsp;</label>
             <input type="text" name="height" class="form-control" value="{{$player->height}}" style="max-width:80px">
             <label for="weight" style="min-width:200px">@lang('edit_profile.weight')&nbsp;</label>
             <input type="text" name="weight" class="form-control" value="{{$player->weight}}" style="max-width:80px">
         </div>
 
-        <div class="form-inline my-2">
+        <div class="form-inline my-3">
             <label for="language" style="min-width:200px">@lang('edit_profile.language')</label>
             <label><input name="language" type="radio" value="es" style="min-width:80px" >@lang('edit_profile.spanish')</label>
             <span style="width:100px"></span>
@@ -110,7 +110,7 @@
             <label><input name="language" type="radio" value="00" style="min-width:80px" checked>@lang('edit_profile.other')</label>
         </div>
 
-        <div class="form-inline my-2">
+        <div class="form-inline my-3">
             <label for="strong_foot" style="min-width:200px">@lang('edit_profile.strong_foot')</label>
             <label><input name="strong_foot" type="radio" value="R" style="min-width:80px" >@lang('edit_profile.right')</label>
             <span style="width:100px"></span>
