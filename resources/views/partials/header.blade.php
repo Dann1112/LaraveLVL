@@ -71,22 +71,22 @@
 
 					<ul class="navbar-nav nav-fill nav-pills px-0 py-2 m-0 mob-background">
 						<li class="nav-item">
-							<a class="nav-link current rounded" href="#">INICIO
+							<a class="nav-link current rounded" href="{{route('home')}}">@lang('header.home')
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link " href="#">CLASIFICACION</a>
+						<a class="nav-link " href="{{route('standings')}}">@lang('header.standings')</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="{{route('players')}}">JUGADORES</a>
+							<a class="nav-link " href="{{route('players')}}">@lang('header.players')</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="#">RANKING</a>
+							<a class="nav-link " href="{{route('home')}}">@lang('header.ranking')</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="#">CONTACTO</a>
+							<a class="nav-link " href="{{route('home')}}">@lang('header.contact')</a>
 						</li>
 						<!-- Authentication Links -->
 						@guest

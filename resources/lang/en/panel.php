@@ -19,5 +19,12 @@
         'twitch' => 'Twitch',
         'instagram' => 'Instagram',
         'logo' => 'Logo',
-        'youtube' => 'Youtube'
+        'youtube' => 'Youtube',
+        'new_competition' => 'New Competition',
+        'start_date' => 'Start Date',
+        'end_date' => 'End Date',
+        'not_finished' => 'Not Finished',
+        'prize' => 'Prize',
+        'champion' => 'Champion',
+        'competitions' => 'Competitions'
     ];

@@ -20,5 +20,12 @@
         'instagram' => 'Instagram',
         'facebook' => 'Facebook',
         'logo' => 'Logo',
-        'youtube' => 'Youtube'
+        'youtube' => 'Youtube',
+        'new_competition' => 'Nueva Competicion',
+        'start_date' => 'Fecha de Inico',
+        'end_date' => 'Fecha de Termino',
+        'not_finished' => 'No Finalizado',
+        'prize' => 'Premio',
+        'champion' => 'Campeon',
+        'competitions' => 'Competencias'
     ];

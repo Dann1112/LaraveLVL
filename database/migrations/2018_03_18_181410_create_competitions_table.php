@@ -14,8 +14,14 @@ class CreateCompetitionsTable extends Migration
     public function up()
     {
         Schema::create('competitions', function (Blueprint $table) {
-            $table->string('id');
-            $table->string('name');
+            $table->increments('id');
+            $table->string('name',50);
+            $table->date('start_date')->nullable(false);
+            $table->date('end_date')->nullable(true);
+            $table->unsignedInteger('prize')->default(0)->nullable(true);;
+            $table->string('champion',30)->nullable(true);
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

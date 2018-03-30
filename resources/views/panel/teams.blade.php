@@ -56,7 +56,7 @@
 
             <div class="form-row text-center my-2">
               <label class="col-form-label col-2" for="primary_color">@lang('panel.primary_color')&nbsp<span class="text-danger">*</span></label>
-              <input type="text" class="form-control col-10" placeholder="In RGB (255,255,255), can't be white" name="primary_color" required>
+              <input type="color" class="form-control col-10" name="primary_color" required>
             </div>
 
             <div class="form-row text-center my-2">

@@ -13,6 +13,8 @@ Route::get('/teams/{team}','TeamController@show');
 
 Route::post('/teams','TeamController@store')->name('teams');
 
+Route::get('/standings','StandingsController@index')->name('standings');
+
 Route::get('/register','RegistrationController@create')->name('register');
 Route::post('/register','RegistrationController@store');
 
@@ -21,7 +23,12 @@ Route::post('/login','SessionsController@store');
 
 Route::get('/panel','PanelController@index')->name('panel');
 
+Route::get('/panel/competitions','CompetitionsController@create')->name('competitions');
+Route::post('/panel/competitions','CompetitionsController@store');
+
 Route::get('/logout','SessionsController@destroy');
+
+
 
 /*
 
