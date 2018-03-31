@@ -12,5 +12,17 @@ return [
     'ST' => 'DC',
     'LW' => 'EI',
     'RW' => 'ED',
+    'gk' => 'PO',
+    'lb' => 'DFI',
+    'cb' => 'DFC',
+    'rb' => 'DFD',
+    'cdm' => 'MCD',
+    'cm' => 'MC',
+    'cam' => 'MCO',
+    'lm' => 'MI',
+    'rm' => 'MD',
+    'st' => 'DC',
+    'lw' => 'EI',
+    'rw' => 'ED'
 
 ];

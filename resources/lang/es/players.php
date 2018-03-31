@@ -16,7 +16,7 @@ return [
     'any' => 'Cualquiera',
     'freeAgent' => 'Agente Libre',
     'team' => 'Equipo',
-    'preferredFoot' => 'Pie Hábil',
+    'strong_foot' => 'Pie Hábil',
     'left' => 'Izquierdo',
     'right' => 'Derecho',
     'choose' => 'Elige una opcion',
@@ -35,5 +35,7 @@ return [
     'preferredPositions' => 'Posiciones Preferidas',
     'edit_profile' => 'Editar Perfil',
     'messages' => 'Mensajes',
-    'contracts' => 'Contratos'
+    'contracts' => 'Contratos',
+    'orderby' => 'Ordenar Por',
+    'other' => 'Otro'
 ];

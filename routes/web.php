@@ -3,6 +3,7 @@
 Route::get('/','PlayerController@showAll')->name('home');
 
 Route::get('/search','PlayerController@showAll')->name('players');
+Route::get('/search/results','PlayerController@search')->name('search_results');
 
 Route::get('/profile/edit','PlayerController@editProfile')->name('edit_profile');
 Route::get('/profile/inbox','InboxController@index')->name('inbox');

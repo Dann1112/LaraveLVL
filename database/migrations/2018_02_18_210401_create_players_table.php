@@ -32,8 +32,7 @@ class CreatePlayersTable extends Migration
             $table->tinyInteger('shooting')->default(60)->unsigned();
             $table->tinyInteger('dribbling')->default(60)->unsigned();
             $table->tinyInteger('defense')->default(60)->unsigned();
-            $table->float('height')->default(1.70)->unsigned();
-            $table->float('weight')->default(80)->unsigned();
+            $table->float('height')->default(170)->unsigned();
             $table->char('nationality',2)->default('');
             $table->char('language',2)->default('');
             $table->char('strong_foot',1)->default('');

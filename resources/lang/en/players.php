@@ -16,7 +16,7 @@ return [
     'any' => 'Any',
     'freeAgent' => 'Free Agent',
     'team' => 'Team',
-    'preferredFoot' => 'Preferred Foot',
+    'strong_foot' => 'Preferred Foot',
     'left' => 'Left',
     'right' => 'Right',
     'choose' => 'Choose an option',
@@ -35,5 +35,7 @@ return [
     'preferredPositions' => 'Preferred Positions',
     'edit_profile' => 'Edit Profile',
     'messages' => 'Messages',
-    'contracts' => 'Contracts'
+    'contracts' => 'Contracts',
+    'orderby' => 'Order By',
+    'other' => 'Other'
 ];

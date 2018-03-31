@@ -12,5 +12,17 @@ return [
     'ST' => 'ST',
     'LW' => 'LW',
     'RW' => 'RW',
+    'gk' => 'GK',
+    'lb' => 'LB',
+    'cb' => 'CB',
+    'rb' => 'RB',
+    'cdm' => 'CDM',
+    'cm' => 'CM',
+    'cam' => 'CAM',
+    'lm' => 'LM',
+    'rm' => 'RM',
+    'st' => 'ST',
+    'lw' => 'LW',
+    'rw' => 'RW'
 
 ];
