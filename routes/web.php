@@ -33,6 +33,8 @@ Route::post('/panel/fixtures','FixturesController@store');
 Route::get('/panel/inscriptions','StandingsController@create')->name('inscriptions');
 Route::post('/panel/inscriptions','StandingsController@store');
 
+Route::get('/panel/player-stats','PlayerStatsController@index')->name('player_stats');
+
 
 Route::get('/logout','SessionsController@destroy');
 
