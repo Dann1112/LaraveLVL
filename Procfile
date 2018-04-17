@@ -1,1 +1,1 @@
-web: vendor/bin/LVL-Web/ 
+web: vendor/bin/LVL-Web/ public/ 
