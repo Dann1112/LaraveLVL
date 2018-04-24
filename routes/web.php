@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/','RegistrationController@create')->name('home');
+Route::get('/','PlayerController@showAll')->name('home');
 
 Route::get('/search','PlayerController@showAll')->name('players');
 Route::get('/search/results','PlayerController@search')->name('search_results');

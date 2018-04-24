@@ -2,6 +2,19 @@
 
 @section('option_content')
 
+<ul class="nav nav-tabs" id="fixturesTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="newFixture-tab" data-toggle="tab" href="#newFixture" role="tab" >@lang('panel.new')</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="editFixture-tab" data-toggle="tab" href="#editFixture" role="tab">@lang('panel.edit')</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" id="deleteFixture-tab" data-toggle="tab" href="#deleteFixture" role="tab">@lang('panel.delete')</a>
+        </li>
+</ul>
+
+<div class="tab-content" id="FixtureTabContent">
 
     <div class="tab-pane fade show active" id="newFixture" role="tabpanel" aria-labelledby="tab-fixture">
         <hr class="border" style="color:white">
@@ -11,7 +24,7 @@
         @include('layouts.errors')
 
 
-      <form class="text-center" method="POST" action="{{route('player_stats')}}" enctype="multipart/form-data">
+      <form class="text-center" method="POST" action="{{route('fixtures')}}" enctype="multipart/form-data">
 
         {{csrf_field()}}
 

@@ -18,7 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('name',50);
             $table->char('abbreviation',3);
             $table->string('manager',50)->nullable(false);
-            $table->string('comanager',50)->nullable(true);
+            $table->string('comanager',50)->nullable();;
             $table->string('streaming_channel',255)->nullable(true);
             $table->string('primary_color')->nullable(true);
             $table->string('logo')->nullable(true);
@@ -29,11 +29,9 @@ class CreateTeamsTable extends Migration
             $table->string('twitch')->nullable(true);
             $table->string('youtube')->nullable(true);
             $table->string('instagram')->nullable(true);
-
             $table->primary('name');
-            $table->foreign('manager')->references('username')->on('players')->onDelete('cascade');
-            $table->foreign('comanager')->references('username')->on('players')->onDelete('cascade');
-            
+            $table->unique('manager');
+            $table->unique('comanager');
             $table->softDeletes();
         });
     }
