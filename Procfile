@@ -1,1 +1,1 @@
-web: vendor/bin/LVL-Web/ public/ 
+web: vendor/bin/heroku-php-apache2 public/ 
