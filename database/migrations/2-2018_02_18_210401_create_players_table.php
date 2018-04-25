@@ -20,7 +20,7 @@ class CreatePlayersTable extends Migration
             $table->string('remember_token',100)->nullable(true);
             $table->string('name',35)->nullable(false)->default('');
             $table->string('last_name',35)->nullable(false)->default('');
-            $table->date('birth_date')->nullable(false);
+            $table->date('birth_date')->nullable(false)->default('1999-09-09');;
             $table->char('gender',1)->default('');
             $table->char('position',3)->default('');
             $table->char('second_position',3)->default('');

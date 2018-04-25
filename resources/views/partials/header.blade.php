@@ -91,8 +91,8 @@
 						<!-- Authentication Links -->
 						@guest
 							<li class="d-flex d-md-none">
-								<a href="{{route('login')}}" class="btn btn-success" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</a>
-								<a href="{{route('register')}}" class="btn btn-success" style="width:100%M font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>REGISTRARSE</a>
+								<a href="{{route('login')}}" class="btn btn-success" style="width:100% font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>INGRESAR</a>
+								<a href="{{route('register')}}" class="btn btn-success" style="width:100% font-weight:bold"><i class="fas fa-sign-in-alt mr-2"></i>REGISTRARSE</a>
 							</li>
                         @else
                             
@@ -121,10 +121,10 @@
 											</button>
 											<div class="dropdown-menu">
 												<a class="dropdown-item" href="{{route('edit_profile')}}"><i class="fas fa-user mr-2"></i>Mi Perfil</a>
-												<a class="dropdown-item" href="#"><i class="fas fa-envelope mr-2"></i>Mis Mensajes</a>
+												<a class="dropdown-item" href="{{route('inbox')}}"><i class="fas fa-envelope mr-2"></i>Mis Mensajes</a>
 												<a class="dropdown-item" href="#"><i class="fas fa-edit mr-2"></i>Mis Contratos</a>
 												<div class="dropdown-divider"></div>
-												<a class="dropdown-item bg-danger" href="#" style="color:white"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión</a>
+												<a class="dropdown-item bg-danger" href="{{route('logout')}}" style="color:white"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión</a>
 											</div>
 										</div>
 									</div>

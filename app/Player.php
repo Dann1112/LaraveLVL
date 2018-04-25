@@ -23,4 +23,6 @@ class Player extends Model
         return static::where('nationality',$country)->get();
     }
 
+  
+
 }

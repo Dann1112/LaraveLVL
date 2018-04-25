@@ -7,7 +7,7 @@
     <div class="col-3">
         <ul class="list-group  text-center">
             <a href="{{route('edit_profile')}}"<li class="list-group-item"><i class="fas fa-user mr-2"></i>@lang('players.edit_profile')</li></a>
-            <a href="{{route('home')}}"<li class="list-group-item"><i class="fas fa-envelope mr-2"></i>@lang('players.messages')</li></a>
+            <a href="{{route('inbox')}}"<li class="list-group-item"><i class="fas fa-envelope mr-2"></i>@lang('players.messages')</li></a>
             <a href="{{route('home')}}"<li class="list-group-item"><i class="fas fa-edit mr-2"></i>@lang('players.contracts')</li></a>
         </ul>
     </div>

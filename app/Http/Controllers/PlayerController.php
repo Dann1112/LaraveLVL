@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 use App\Player;
 
@@ -107,6 +108,12 @@ class PlayerController extends Controller
     public function show(Player $player)
     {
         return view('players.profile',compact(array('player')));
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->home();
     }
 
     

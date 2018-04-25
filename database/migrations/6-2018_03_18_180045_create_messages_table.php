@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInboxTable extends Migration
+class CreateMessagesTable extends Migration
 {
 
     /**
@@ -14,14 +14,14 @@ class CreateInboxTable extends Migration
      */
     public function up()
     {
-        Schema::create('inbox', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->timeTz('date')->nullable(false);
             $table->string('from')->nullable(false);
             $table->string('to')->nullable(false);
-            $table->string('body')->nullable(false);
-            $table->timeTz('seen')->nullable(true);
+            $table->string('body')->nullable(true)->default("");
+            $table->timeTz('seen')->nullable(true)->default("01:01:01");
             $table->boolean('status')->default(0);
+            $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('from')->references('username')->on('players')->onDelete('cascade');

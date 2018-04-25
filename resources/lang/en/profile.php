@@ -10,5 +10,6 @@ return[
     "goals" => "Goals",
     "history" => "History",
     "totals" => "Totals",
-    "positions" => "Positions:"
+    "positions" => "Positions:",
+    "invite" => "Invite to club"
 ];

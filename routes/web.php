@@ -6,13 +6,17 @@ Route::get('/search','PlayerController@showAll')->name('players');
 Route::get('/search/results','PlayerController@search')->name('search_results');
 
 Route::get('/profile/edit','PlayerController@editProfile')->name('edit_profile');
-Route::get('/profile/inbox','InboxController@index')->name('inbox');
+Route::get('/profile/inbox','MessageController@index')->name('inbox');
+Route::post('/profile/inbox','MessageController@createClubRequest')->name('club_request');
 
 Route::get('/players/{player}','PlayerController@show');
+
+Route::post('/players','InscriptionsController@create')->name('joined_team');
 
 Route::get('/teams/{team}','TeamController@show');
 
 Route::post('/teams','TeamController@store')->name('teams');
+
 
 Route::get('/standings','StandingsController@index')->name('standings');
 
@@ -36,7 +40,7 @@ Route::post('/panel/inscriptions','StandingsController@store');
 Route::get('/panel/player-stats','PlayerStatsController@index')->name('player_stats');
 
 
-Route::get('/logout','SessionsController@destroy');
+Route::get('/logout','SessionsController@destroy')->name('logout');
 
 
 

@@ -10,5 +10,6 @@ return [
     "goals" => "Goles",
     "history" => "Historial",
     "totals" => "Totales",
-    "positions" => "Posiciones"
+    "positions" => "Posiciones",
+    "invite" => "Invitar al club"
 ];
