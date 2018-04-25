@@ -14,25 +14,25 @@ class CreatePlayersTable extends Migration
     public function up()
     {
         Schema::create('players', function (Blueprint $table) {
-            $table->string('username',20);
-            $table->string('email',255)->default('');
-            $table->string('password',255)->default('');
-            $table->string('remember_token',100)->default('');
-            $table->string('name',35)->default('');
-            $table->string('last_name',35)->default('');
-            $table->date('birth_date')->default('2018-03-03');
+            $table->string('username',20)->nullable(false);
+            $table->string('email',255)->nullable(false)->default('');
+            $table->string('password',255)->nullable(false)->default('');
+            $table->string('remember_token',100)->nullable(true);
+            $table->string('name',35)->nullable(false)->default('');
+            $table->string('last_name',35)->nullable(false)->default('');
+            $table->date('birth_date')->nullable(false);
             $table->char('gender',1)->default('');
             $table->char('position',3)->default('');
             $table->char('second_position',3)->default('');
             $table->char('third_position',3)->default('');
-            $table->tinyInteger('overall')->default(60)->unsigned();
-            $table->tinyInteger('pace')->default(60)->unsigned();
-            $table->tinyInteger('passing')->default(60)->unsigned();
-            $table->tinyInteger('physical')->default(60)->unsigned();
-            $table->tinyInteger('shooting')->default(60)->unsigned();
-            $table->tinyInteger('dribbling')->default(60)->unsigned();
-            $table->tinyInteger('defense')->default(60)->unsigned();
-            $table->float('height')->default(170)->unsigned();
+            $table->unsignedTinyInteger('overall')->default(60);
+            $table->unsignedTinyInteger('pace')->default(60);
+            $table->unsignedTinyInteger('passing')->default(60);
+            $table->unsignedTinyInteger('physical')->default(60);
+            $table->unsignedTinyInteger('shooting')->default(60);
+            $table->unsignedTinyInteger('dribbling')->default(60);
+            $table->unsignedTinyInteger('defense')->default(60);
+            $table->unsignedTinyInteger('height')->default(170);
             $table->char('nationality',2)->default('');
             $table->char('language',2)->default('');
             $table->char('strong_foot',1)->default('');

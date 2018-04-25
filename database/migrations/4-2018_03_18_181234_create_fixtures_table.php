@@ -20,8 +20,8 @@ class CreateFixturesTable extends Migration
             $table->date('date')->nullable(false);
             $table->timeTz('time')->nullable(false);
             $table->string('home_team')->nullable(false);
-            $table->integer('home_goals')->nullable(false)->default(0);
-            $table->integer('away_goals')->nullable(false)->default(0);
+            $table->unsignedInteger('home_goals')->nullable(false)->default(0);
+            $table->unsignedInteger('away_goals')->nullable(false)->default(0);
             $table->string('away_team')->nullable(false);
             $table->string('status')->nullable(false)->default(0);
         });

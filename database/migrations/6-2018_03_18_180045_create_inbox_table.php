@@ -16,13 +16,16 @@ class CreateInboxTable extends Migration
     {
         Schema::create('inbox', function (Blueprint $table) {
             $table->increments('id');
-            $table->timeTz('date');
-            $table->string('from');
-            $table->string('to');
-            $table->string('subject');
-            $table->text('body');
-            $table->timeTz('last');
+            $table->timeTz('date')->nullable(false);
+            $table->string('from')->nullable(false);
+            $table->string('to')->nullable(false);
+            $table->string('body')->nullable(false);
+            $table->timeTz('seen')->nullable(true);
+            $table->boolean('status')->default(0);
             $table->softDeletes();
+
+            $table->foreign('from')->references('username')->on('players')->onDelete('cascade');
+            $table->foreign('to')->references('username')->on('players')->onDelete('cascade');
         });
     }
 
@@ -36,3 +39,4 @@ class CreateInboxTable extends Migration
         Schema::dropIfExists('inbox');
     }
 }
+
