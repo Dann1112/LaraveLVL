@@ -36,12 +36,15 @@ class CreatePlayersTable extends Migration
             $table->char('nationality',2)->default('');
             $table->char('language',2)->default('');
             $table->char('strong_foot',1)->default('');
-            $table->string('profile_picture',255)->nullable();
+            $table->string('profile_picture',255)->nullable(true)->default('profile_pictures/Admin.png');
+            $table->char('role',1)->nullable(false)->default('0');
             $table->date('created_at');
             $table->date('updated_at');
             $table->softdeletes();
 
             $table->primary('username');
+
+            $table->foreign('role')->references('id')->on('roles');
         });
     }
 

@@ -20,11 +20,12 @@ class CreateCompetitionsTable extends Migration
             $table->date('start_date')->nullable(false);
             $table->date('end_date')->nullable(true);
             $table->unsignedInteger('prize')->default(0)->nullable(true);
-            $table->string('champion',30)->nullable(true);
+            $table->unsignedInteger('champion')->nullable(true);
 
-            $table->foreign('champion')->references('name')->on('teams');
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('champion')->references('id')->on('teams');
+
 
 
         });

@@ -16,11 +16,11 @@ class CreateInscriptionsTable extends Migration
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('player')->nullable(false);;
-            $table->string('team')->nullable(false);;
+            $table->unsignedInteger('team')->nullable(false);;
             $table->timestamps();
 
             $table->foreign('player')->references('username')->on('players')->onDelete('cascade');
-            $table->foreign('team')->references('name')->on('teams')->onDelete('cascade');
+            $table->foreign('team')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 

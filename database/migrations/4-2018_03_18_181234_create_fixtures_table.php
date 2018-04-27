@@ -19,11 +19,14 @@ class CreateFixturesTable extends Migration
             $table->unsignedTinyInteger('matchday')->nullable(true);
             $table->date('date')->nullable(false);
             $table->timeTz('time')->nullable(false);
-            $table->string('home_team')->nullable(false);
+            $table->unsignedInteger('home_team')->nullable(false);
             $table->unsignedInteger('home_goals')->nullable(false)->default(0);
             $table->unsignedInteger('away_goals')->nullable(false)->default(0);
-            $table->string('away_team')->nullable(false);
+            $table->unsignedInteger('away_team')->nullable(false);
             $table->string('status')->nullable(false)->default(0);
+
+            $table->foreign('home_team')->references('id')->on('teams');
+            $table->foreign('away_team')->references('id')->on('teams');
         });
     }
 

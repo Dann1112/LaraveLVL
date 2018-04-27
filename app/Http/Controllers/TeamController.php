@@ -57,7 +57,7 @@ class TeamController extends Controller
             request()->file('logo'),
             request('name').'.'.request()->file('logo')->getClientOriginalExtension());   
 
-        Team::create([
+        $team = Team::create([
             'name' => request('name'),
             'abbreviation' => request('abbreviation'),
             'manager' => request('manager'),
@@ -70,6 +70,16 @@ class TeamController extends Controller
             'twitter' => request('twitter'),
             'twitch' => request('twitch'),
             'youtube' => request('youtube')]);
+
+            \App\Player::where('username', request('manager'))->update(['role' => 1]);
+            \App\Inscription::create([
+                'player' => request('manager'),
+                'team' => $team->id]);
+            \App\Player::where('username', request('comanager'))->update(['role' => 1]);
+            \App\Inscription::create([
+                'player' => request('comanager'),
+                'team' => $team->id]);
+
 
         //Redirects
 

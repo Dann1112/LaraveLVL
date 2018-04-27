@@ -15,6 +15,7 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name',50)->nullable(false);
             $table->char('abbreviation',3)->nullable(false);
             $table->string('manager',50)->nullable(false);
@@ -41,7 +42,6 @@ class CreateTeamsTable extends Migration
             $table->unsignedTinyInteger('conceded_penalties')->default(0);
             $table->unsignedTinyInteger('goals_conceded')->default(0);
 
-            $table->primary('name');
             $table->unique('manager');
             $table->unique('comanager');
 

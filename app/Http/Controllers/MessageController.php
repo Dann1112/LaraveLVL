@@ -9,11 +9,13 @@ class MessageController extends Controller
 {
     public function index(){
 
-        $messages = Message::where('to',auth()->user()->username)->orderBy('created_at','DESC')->get();
+        $messages = Message::where('to',auth()->user()->username)->where('status',0)->orderBy('created_at','DESC')->get();
         $managers = Message::where('to',auth()->user()->username)->distinct()->pluck('from');
 
-        $teams = \App\Team::whereIn('manager',$managers)->get();
+        
 
+        $teams = \App\Team::whereIn('manager',$managers)->get();
+        
         return view('players.inbox',compact(['messages','teams']));
     }
 

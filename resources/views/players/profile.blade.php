@@ -15,11 +15,15 @@
 
           
         </div>
+        @if(Auth::check())
+        @if(Auth::user()->role == '1')
         <form class="text-center" method="POST" action="{{route('club_request')}}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input type="hidden" name="username" value={{$player->username}}>
           <button type="submit" class="btn btn-primary btn-lg" style="width:50%">@lang('profile.invite')</button>
         </form>
+        @endif
+        @endif
         
       </div>
     </div>

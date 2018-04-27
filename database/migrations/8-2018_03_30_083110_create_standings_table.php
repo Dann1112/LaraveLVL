@@ -16,7 +16,7 @@ class CreateStandingsTable extends Migration
         Schema::create('standings', function (Blueprint $table) {
 
             $table->unsignedInteger('competition')->nullable(false);
-            $table->string('team')->nullable(false);
+            $table->unsignedInteger('team')->nullable(false);
             $table->unsignedTinyInteger('position')->nullable(false)->default(0);
             $table->unsignedTinyInteger('games_played')->nullable(false)->default(0);
             $table->unsignedTinyInteger('games_won')->nullable(false)->default(0);
@@ -30,7 +30,7 @@ class CreateStandingsTable extends Migration
 
             $table->primary(['competition','team']);
             $table->foreign('competition')->references('id')->on('competitions');
-            $table->foreign('team')->references('name')->on('teams');
+            $table->foreign('team')->references('id')->on('teams');
         });
     }
 

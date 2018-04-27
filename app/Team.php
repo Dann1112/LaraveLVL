@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes ;
 
 class Team extends Model
 {
-
-    public $primaryKey = 'name';
-    public $keyType = 'string';
-    public $incrementing = false;
     protected $dates = ['deleted_at'];
 
     protected $fillable = [

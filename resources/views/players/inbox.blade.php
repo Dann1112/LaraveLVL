@@ -18,15 +18,18 @@
         <tbody style="color:white">
             
           @foreach($messages->all() as $message)
+          
           @foreach($teams->all() as $team)
 
-          @if($team->manager == $message->from)
+          @if(strcasecmp( $team->manager , $message->from) == 0)
+        
 
           <form action={{route('joined_team')}} method="POST">
             {{csrf_field()}}
           <tr class="text-center">
-            <input type="hidden" name="team" value={{$team->name}}>
+            <input type="hidden" name="team" value={{$team->id}}>
             <input type="hidden" name="username" value={{$message->to}}>
+            <input type="hidden" name="message" value={{$message->id}}>
             <td>{{$message->created_at}}</td>
             <td><img src="/storage/{{$team->logo}}" style="max-height: 30px; max-width: 30px">&nbsp;{{$team->abbreviation}}</td>
             <td><span class="font-weight-bold font-italic">{{$message->from}}</span> @lang('inbox.club_request')</td>
