@@ -15,9 +15,10 @@ class CreatePlayerStatsTable extends Migration
     {
         Schema::create('player_stats', function (Blueprint $table) {
 
+                        $table->increments('id');
                         $table->unsignedInteger('fixture');
                         $table->string('player');
-                        $table->string('team');
+                        $table->unsignedInteger('team');
                         $table->unsignedTinyInteger('goals')->default(0);
                         $table->unsignedTinyInteger('shots_on_target')->default(0);
                         $table->unsignedTinyInteger('shots_away')->default(0);
@@ -29,6 +30,8 @@ class CreatePlayerStatsTable extends Migration
                         $table->unsignedTinyInteger('fouls_received')->default(0);
                         $table->unsignedTinyInteger('won_tackles')->default(0);
                         $table->unsignedTinyInteger('failed_tackles')->default(0);
+                        $table->unsignedTinyInteger('yellow_cards')->default(0);
+                        $table->unsignedTinyInteger('red_cards')->default(0);
                         $table->unsignedTinyInteger('fouls')->default(0);
                         $table->unsignedTinyInteger('conceded_penalties')->default(0);
                         $table->unsignedTinyInteger('interceptions')->default(0);
@@ -45,9 +48,9 @@ class CreatePlayerStatsTable extends Migration
                         $table->unsignedTinyInteger('balls_taken_gk')->default(0);
                         
              
-                        $table->primary(['fixture','player']);
                         $table->foreign('fixture')->references('id')->on('fixtures')->onDelete('cascade');
                         $table->foreign('player')->references('username')->on('players')->onDelete('cascade');
+                        $table->foreign('team')->references('id')->on('teams');
                 });
     }
 

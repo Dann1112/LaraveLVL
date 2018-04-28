@@ -17,6 +17,8 @@ Route::get('/teams/{team}','TeamController@show');
 
 Route::post('/teams','TeamController@store')->name('teams');
 
+Route::get('/ranking','PlayerStatController@index')->name('rankings');
+Route::get('/ranking/{stat}','PlayerStatController@show');
 
 Route::get('/standings','StandingsController@index')->name('standings');
 
@@ -41,34 +43,3 @@ Route::get('/panel/player-stats','PlayerStatsController@index')->name('player_st
 
 
 Route::get('/logout','SessionsController@destroy')->name('logout');
-
-
-
-/*
-
-/home
-/buscar
-/jugador/dann1112
-
-/equipo/wolfgang
-    /equipo/wolfgang/plantilla
-    /equipo/wolfgang/estadisticas
-    ...
-
-/ranking
-    /ranking/goles
-    /ranking/asistencias
-    ...
-
-/perfil
-
-/perfil/equipo
-
-/panel
-    /panel/juego/nuevo
-    /panel/juego/editar
-    /panel/equipo/nuevo
-    ...
-
-
-*/
