@@ -14,7 +14,7 @@ return [
     'height' => 'Height',
     'status' => 'Status',
     'any' => 'Any',
-    'freeAgent' => 'Free Agent',
+    'free_agent' => 'F/A',
     'team' => 'Team',
     'strong_foot' => 'Preferred Foot',
     'left' => 'Left',

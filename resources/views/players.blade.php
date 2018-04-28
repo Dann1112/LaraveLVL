@@ -426,7 +426,21 @@
                 <td>{{$player->username}}</td>
                   <td>{{$player->overall}}</td>
                   <td>@include('partials.positions')</td>
-                  <td><img src="assets/img/teams/azathoth.png" style="max-height: 30px; max-width: 30px">
+                  <?php $ts = \App\Inscription::where('player',$player->username)->get();
+                  if($ts->count() > 0){
+                        foreach ($ts as $t){
+                          $ts2 = \App\Team::where('id',$t->team)->get();
+                          foreach($ts2 as $t2){
+                            echo('<td><img style="max-height:30px; max-width:30px" src="/storage/'.$t2->logo.'"></td>');
+                          }
+                        }
+                      }
+                      else{
+                        echo('<td>N/A</td>');
+                      }
+                        
+                        ?>
+                  
                   
                 </tr></a>
               @endforeach

@@ -18,8 +18,10 @@ class PlayerController extends Controller
     public function showAll()
     {
         $players = Player::orderBy('overall', 'DESC')->take(100)->paginate(15);
+        $inscriptions = \App\Inscription::all();
+        $teams = \App\Team::all();
 
-        return view('players',compact('players'));
+        return view('players',compact(['players','inscriptions','teams']));
     }
 
     public function search()

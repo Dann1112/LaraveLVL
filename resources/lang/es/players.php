@@ -14,7 +14,7 @@ return [
     'height' => 'Estatura',
     'status' => 'Estado',
     'any' => 'Cualquiera',
-    'freeAgent' => 'Agente Libre',
+    'free_agent' => 'A/L',
     'team' => 'Equipo',
     'strong_foot' => 'Pie Hábil',
     'left' => 'Izquierdo',
