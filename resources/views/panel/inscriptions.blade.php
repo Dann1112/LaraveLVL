@@ -44,7 +44,7 @@
                 <select class="form-control col-10" name="team">
                     <option selected disabled hidden>@lang('panel.choose_option')</option>
                     @foreach($teams as $team)
-                        <option value="{{$team->name}}">{{$team->name}}</option>
+                        <option value="{{$team->id}}">{{$team->name}}</option>
                     @endforeach
                 </select>
                 </div>

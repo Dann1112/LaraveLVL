@@ -29,4 +29,8 @@ class PlayerStatController extends Controller
         return view('ranking',compact(['players','stat']));
     
     }
+
+    public function create(){
+        
+    }
 }

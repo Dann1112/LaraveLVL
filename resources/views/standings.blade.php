@@ -37,7 +37,7 @@
                   @foreach($standings as $stand)
                   @if($stand->competition == $comp->id)
                   @foreach($teams as $team)
-                  @if($stand->team == $team->name)
+                  @if($stand->team == $team->id)
                   
                     <tr>
                         <th scope="row">{{$stand->position}}&nbsp<i class="fa fa-caret-up"></i></th>
