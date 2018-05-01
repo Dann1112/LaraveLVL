@@ -23,8 +23,8 @@ class RegistrationController extends Controller
         //Validates the form
         $this->validate(request(),[
             'username' => array(
-                'required','string','min:3','max:16','unique:players',
-                'regex:/^[a-z\d_-]{3,16}$/i'),
+            'required','string','min:3','max:16','unique:players',
+            'regex:/^[a-z\d_-]{3,16}$/i'),
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:5|max:15|confirmed',
             'name' => array('required','string','max:55',

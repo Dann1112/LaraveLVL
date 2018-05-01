@@ -11,5 +11,6 @@ return [
     "history" => "Historial",
     "totals" => "Totales",
     "positions" => "Posiciones",
-    "invite" => "Invitar al club"
+    "invite" => "Invitar al club",
+    "player_inscribed" => "No puedes invitar a este jugador. Este jugador ya está inscrito en un equipo"
 ];

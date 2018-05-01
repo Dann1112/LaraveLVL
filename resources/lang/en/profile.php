@@ -11,5 +11,6 @@ return[
     "history" => "History",
     "totals" => "Totals",
     "positions" => "Positions:",
-    "invite" => "Invite to club"
+    "invite" => "Invite to club",
+    "player_inscribed" => "You can't invite this players. This player is already in a team"
 ];

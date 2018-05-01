@@ -23,6 +23,10 @@ class MessageController extends Controller
 
         //Creates and Saves the club request
 
+        $this->validate(request(),[
+            'username' => 'unique:inscriptions,player',
+        ]);
+
         Message::create([
             'from' => auth()->user()->username,
             'to' => request()->username]);

@@ -17,6 +17,17 @@
         </div>
         @if(Auth::check())
         @if(Auth::user()->role == '1')
+
+        @if(count($errors))
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>@lang('profile.player_inscribed')</li>
+                    </ul>
+                </div>
+            </div>
+        @endif
+
         <form class="text-center" method="POST" action="{{route('club_request')}}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input type="hidden" name="username" value={{$player->username}}>

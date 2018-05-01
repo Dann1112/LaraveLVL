@@ -30,7 +30,4 @@ class PlayerStatController extends Controller
     
     }
 
-    public function create(){
-        
-    }
 }

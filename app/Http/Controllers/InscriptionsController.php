@@ -10,6 +10,10 @@ class InscriptionsController extends Controller
 {
     public function create(){
 
+        $this->validate(request(),[
+            'username' => 'unique:inscriptions,player',
+        ]);
+
         Inscription::create([
             'player' => request('username'),
             'team' => request('team')]);
