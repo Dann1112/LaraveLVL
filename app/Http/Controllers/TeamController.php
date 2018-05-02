@@ -125,8 +125,19 @@ class TeamController extends Controller
 
         $last_5_teams = \App\Team::whereIn('name',$last_5_teams)->take(5)->get();
 
+        $scorer_stats = \App\PlayerStat::where('team',$team->id)->orderBy('goals','desc')->first();
+        $scorer = \App\Player::where('username',$scorer_stats->player)->first();
+
+        $assists_stats = \App\PlayerStat::where('team',$team->id)->orderBy('assists','desc')->first();
+        $assists = \App\Player::where('username',$assists_stats->player)->first();
+
+        $squad_players = \App\Inscription::where('team',$team->id)->pluck('player');
+
+        $squad = \App\Player::whereIn('username',$squad_players)->orderBy('overall','desc')->get();
+
         return view('team_profile',compact('team','next_fixture','last_fixture','next_home_team',
-        'next_away_team','last_home_team','last_away_team', 'last_5_teams', 'last_5_matches'));
+        'next_away_team','last_home_team','last_away_team', 'last_5_teams', 'last_5_matches','scorer','scorer_stats',
+        'assists','assists_stats','squad'));
     }
 
     /**

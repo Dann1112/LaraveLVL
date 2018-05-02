@@ -7,12 +7,22 @@
     <img class="mr-5" style="height:auto; width:auto; max-height:200px; max-width:200px" src="/storage/{{$team->logo}}"  alt="{{$team->name}}">
         <div class="text-center">
         <h1 class="display-3">{{$team->name}}</h1>
-            <ul class="inline-list mx-auto p-0" style="font-size:4em; color:white">
-            <li class="list-inline-item"><a href="{{$team->facebook}}"> <i class="fab fa-facebook-f" data-fa-transform="shrink-3.5 down-1.6 right-1.25" data-fa-mask="fas fa-circle"></i></a></li>
-                <li class="list-inline-item"><a href="{{$team->twitter}}"><i class="fab fa-twitter" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
-                <li class="list-inline-item"><a href="{{$team->youtube}}"><i class="fab fa-youtube" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
-                <li class="list-inline-item"><a href="{{$team->twitch}}"><i class="fab fa-twitch" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
-                <li class="list-inline-item"><a href="{{$team->instagram}}"><i class="fab fa-instagram" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
+            <ul class="inline-list mx-auto p-0" style="font-size:4em">
+                @if($team->facebook !== null)
+                    <li class="list-inline-item"><a href="http://www.{{$team->facebook}}" target="_blank" style="color:white"> <i class="fab fa-facebook-f" data-fa-transform="shrink-3.5 down-1.6 right-1.25" data-fa-mask="fas fa-circle"></i></a></li>
+                    @endif
+                @if($team->twitter !== null)
+                    <li class="list-inline-item"><a href="http://www.{{$team->twitter}}" target="_blank" style="color:white"><i class="fab fa-twitter" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
+                    @endif
+                @if($team->youtube !== null)
+                    <li class="list-inline-item"><a href="http://www.{{$team->youtube}}" target="_blank" style="color:white"><i class="fab fa-youtube" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
+                    @endif
+                @if($team->twitch !== null)
+                    <li class="list-inline-item"><a href="http://www.{{$team->twitch}}" target="_blank" style="color:white"><i class="fab fa-twitch" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
+                    @endif
+                @if($team->instagram !== null)
+                    <li class="list-inline-item"><a href="http://www.{{$team->instagram}}" target="_blank" style="color:white"><i class="fab fa-instagram" data-fa-transform="shrink-3.5" data-fa-mask="fas fa-circle"></i></a></li>
+                    @endif
             </ul>
         </div>
     </div>
@@ -25,12 +35,6 @@
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" id="squad-tab" data-toggle="tab" href="#squad" role="tab" aria-controls="general" aria-selected="true">@lang('teams.squad')</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" id="season-tab" data-toggle="tab" href="#season" role="tab" aria-controls="general" aria-selected="true">@lang('teams.current_season')</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="general" aria-selected="true">@lang('teams.stats')</a>
                 </li>
               </ul>
             
@@ -187,28 +191,30 @@
                                 <h3 class="text-center" style="width:100%">@lang('teams.club_ranking')</h3>
                             <hr class="border" style="color:white">
                             <div class="row d-flex justify-content-around">
-                                    <div class="card col-3 text-center">
+                                    
+                                <div class="card col-3 text-center">
                                             <h4 class="mt-2" style="color:white">@lang('teams.top_scorer')</h4>
-                                            <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                            <img class="card-img-top align-self-center rounded-circle" src="/storage/{{$scorer->profile_picture}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
                                             <div class="card-body">
                                                 
-                                              <p class="card-text">Dann1112<br>15 @lang('teams.goals')</p>
+                                                <p class="card-text" style="color:white; font-size:120%; font-weight:bold">{{$scorer_stats->player}}<br>{{$scorer_stats->goals}} @lang('teams.goals')</p>
                                             </div>
                                           </div>
+
                                           <div class="card col-3 text-center">
-                                                <h4 class="mt-2" style="color:white">@lang('teams.top_assists')</h4>
-                                                <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
-                                                <div class="card-body">
-                                                    
-                                                  <p class="card-text">Spirex1678<br>12 @lang('teams.assists')</p>
-                                                </div>
-                                              </div>
+                                            <h4 class="mt-2" style="color:white">@lang('teams.top_assists')</h4>
+                                            <img class="card-img-top align-self-center rounded-circle" src="/storage/{{$assists->profile_picture}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
+                                            <div class="card-body">
+                                                
+                                                <p class="card-text" style="color:white; font-size:120%; font-weight:bold">{{$assists_stats->player}}<br>{{$assists_stats->assists}} @lang('teams.assists')</p>
+                                            </div>
+                                          </div>
                                               <div class="card col-3 text-center">
                                                     <h4 class="mt-2" style="color:white">@lang('teams.the_best')</h4>
-                                                    <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
+                                                    <img class="card-img-top align-self-center rounded-circle" src="/storage/{{$team->logo}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
                                                     <div class="card-body">
                                                         
-                                                      <p class="card-text">Myrod45<br>@lang('teams.average') <br> 8.7</p>
+                                                            <p class="card-text" style="color:white; font-size:120%; font-weight:bold">@lang('teams.coming_soon')</p>
                                                     </div>
                                                   </div>
                             </div>
@@ -220,23 +226,24 @@
                             <hr class="border" style="color:white">
                             <div class="row d-flex justify-content-around">
                                     <div class="card col-3">
-                                            <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
-                                            <div class="card-body">
-                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <img class="card-img-top align-self-center" src="/storage/{{$team->logo}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
+                                            <div class="card-body text-center">
+                                                    <p class="card-text" style="color:white; font-size:120%; font-weight:bold">@lang('teams.coming_soon')</p>
                                             </div>
                                           </div>
                                           <div class="card col-3">
-                                                <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
-                                                <div class="card-body">
-                                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <img class="card-img-top align-self-center" src="/storage/{{$team->logo}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
+                                                <div class="card-body text-center">
+                                                        <p class="card-text" style="color:white; font-size:120%; font-weight:bold">@lang('teams.coming_soon')</p>
                                                 </div>
                                               </div>
                                               <div class="card col-3">
-                                                    <img class="card-img-top align-self-center" src="http://via.placeholder.com/1024x768" style="height:auto; width:auto; max-height:200px; max-width:200px" alt="Card image cap">
-                                                    <div class="card-body">
-                                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                    <img class="card-img-top align-self-center" src="/storage/{{$team->logo}}" style="height:auto; width:auto; max-height:150px; max-width:150px" alt="Card image cap">
+                                                    <div class="card-body text-center">
+                                                            <p class="card-text" style="color:white; font-size:120%; font-weight:bold">@lang('teams.coming_soon')</p>
                                                     </div>
                                                   </div>
+                                        
                             </div>
                         </section>
             </div>
@@ -254,6 +261,26 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                        @foreach($squad as $player)
+                                        <a href="players/{{$player->username}}">
+                                        <tr class="text-center clickable-row" data-href='players/{{$player->username}}' style="cursor:pointer">
+                                            <th scope="row"><img src="/storage/{{$player->profile_picture}}" style="max-height: 30px; max-width: 30px"></th>
+                                            <td><img src="/assets/img/flags/{{$player->nationality.'@'}}3x.png" alt="{{$player->nationality}}" style="max-height: 30px; max-width: 30px"></td>
+                                            <td>{{$player->username}}</td>
+                                              <td>{{$player->overall}}</td>
+                                              <td>@include('partials.positions')</td>
+                                            </tr>
+                                        </a>
+                                          @endforeach
+                                        
+                                          <script>
+                                          jQuery(document).ready(function($) {
+                                            $(".clickable-row").click(function() {
+                                                window.location = $(this).data("href");
+                                            });
+                                        });
+                                      </script>
+                                    
                     
                                   
                                 </tbody>

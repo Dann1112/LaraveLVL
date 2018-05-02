@@ -13,5 +13,8 @@
         'top_assists' => 'Top Assists',
         'the_best' => 'The Best',
         'latest_news' => 'Latest News',
-        'club_ranking' => 'Club Ranking'
+        'club_ranking' => 'Club Ranking',
+        'goals' => 'Goals',
+        'assists' => 'Assists',
+        'coming_soon' => 'Coming Soon'
     ];

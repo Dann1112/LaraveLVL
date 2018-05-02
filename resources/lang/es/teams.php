@@ -13,5 +13,8 @@
         'top_assists' => 'Asistidor',
         'the_best' => 'El Mejor',
         'latest_news' => 'Ultimas Noticias',
-        'club_ranking' => 'Ranking del Club'
+        'club_ranking' => 'Ranking del Club',
+        'goals' => 'Goles',
+        'assists' => 'Asistencias',
+        'coming_soon' => 'Proximamente'
     ];
