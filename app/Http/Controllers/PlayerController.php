@@ -107,9 +107,9 @@ class PlayerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
-    {
-        return view('players.profile',compact(array('player')));
+    public function show(Player $player){
+        
+        return view('players.profile',compact(['player','stats']));
     }
 
     public function logout(){

@@ -12,5 +12,10 @@ return[
     "totals" => "Totals",
     "positions" => "Positions:",
     "invite" => "Invite to club",
-    "player_inscribed" => "You can't invite this players. This player is already in a team"
+    "player_inscribed" => "You can't invite this players. This player is already in a team",
+    "coming_soon" => "Coming Soon",
+    "apps" => "Appearances",
+    "assists" => "Assists",
+    "yellow_cards" => "Yellow Cards",
+    "red_cards" => "Red Cards"
 ];

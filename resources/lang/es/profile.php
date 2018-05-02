@@ -12,5 +12,10 @@ return [
     "totals" => "Totales",
     "positions" => "Posiciones",
     "invite" => "Invitar al club",
-    "player_inscribed" => "No puedes invitar a este jugador. Este jugador ya está inscrito en un equipo"
+    "player_inscribed" => "No puedes invitar a este jugador. Este jugador ya está inscrito en un equipo",
+    "coming_soon" => "Proximamente",
+    "apps" => "Apariciones",
+    "assists" => "Asistencias",
+    "yellow_cards" => "Tarjetas Amarillas",
+    "red_cards" => "Tarjetas Rojas"
 ];

@@ -114,8 +114,8 @@
 			<div class="my-auto">
 								<div class="d-flex">
 									<div class="btn-group mx-auto">
-										<button type="button" class="btn btn-outline-light">
-										<img class="rounded-circle" src="/storage/{{auth()->user()->profile_picture}}" style="max-height: 50px"></button>
+									<a href="\players\{{auth()->user()->username}}" > <button type="button" class="btn btn-outline-light">
+										<img class="rounded-circle" src="/storage/{{auth()->user()->profile_picture}}" style="max-height: 50px"></button></a>
 											<button type="button" class="btn btn-outline-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												<span class="sr-only">Toggle Dropdown</span>
 											</button>

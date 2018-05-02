@@ -6,17 +6,17 @@
 
        <div class="row p-3">
       <div class="col-3 text-center rounded-circle p-3" style="background-image: url('/assets/img/bg_light.jpg'); height:300px">
-      <img class="image-fluid" alt="{{$player->username}}" src="/storage/{{$player->profile_picture}}" style="height:100%; max-width:100%; ">
+      <img class="image-fluid rounded-circle" alt="{{$player->username}}" src="/storage/{{$player->profile_picture}}" style="height:100%; max-width:100%; ">
       </div>
       <div class="col-9 text-center my-auto" style="">
         <div class="d-flex justify-content-center">
-          <h1 class="display-3 my-auto mx-2" style="color:white">{{$player->username}}</h1>
+          <h1 class="display-3 my-auto mx-3" style="color:white">{{$player->username}}</h1>
           <img class="rounded my-auto" src="/assets/img/flags/{{$player->nationality.'@'}}3x.png" alt="{{$player->nationality}}" style="height:50px; width:100px">
 
           
         </div>
         @if(Auth::check())
-        @if(Auth::user()->role == '1')
+        @if(Auth::user()->role == '1' && Auth::user()->username !== $player->username)
 
         @if(count($errors))
             <div class="form-group">
@@ -46,7 +46,20 @@
         <div class="card text-center">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">@lang('profile.team'):<br>
-              <img src="/assets/img/equipos/azathoth.png" style="width:30px; height: 30px">Azathoth eSports</li>
+              <?php $ts = \App\Inscription::where('player',$player->username)->get();
+                  if($ts->count() > 0){
+                        foreach ($ts as $t){ 
+                          $ts2 = \App\Team::where('id',$t->team)->get();
+                          foreach($ts2 as $t2){
+                            echo('<img src="/storage/'.$t2->logo.'" style="max-width:30px; max-height: 30px">&nbsp;'.$t2->name.'</li>');
+                          }
+                        }
+                      }
+                      else{
+                        echo('<td>N/A</td>');
+                      }
+                        
+                        ?>
             <li class="list-group-item">@lang('profile.positions'):<br>
               @include('partials.positions')
             @if($player->second_position)
@@ -58,7 +71,6 @@
             </li>
             <li class="list-group-item">@lang('profile.birth_date'):<br>{{$player->birth_date}}</li>
             <li class="list-group-item">@lang('profile.height'):<br>{{$player->height}} cm</li>
-            <li class="list-group-item">@lang('profile.weight'):<br>63 kg</li>
           </ul>
         </div>
       </div>
@@ -66,10 +78,10 @@
         <hr class="border" style="color:white">
         <h1 class="text-center" style="color:white">@lang('profile.latest_news')</h1>
         <div class="d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/assets/img/logos/1x2_azul.png" alt="Card image cap">
+          <div class="card" style="width: 18rem">
+            <img class="card-img-top mx-auto" src="/storage/{{$player->profile_picture}}" alt="Card image cap" style="max-width:100px; max-height:100px">
             <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text font-italic">@lang('profile.coming_soon')</p>
             </div>
           </div>
           
@@ -84,26 +96,28 @@
     <table class="table table-dark table-striped table-sm mx-auto" style="width:90%">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">@lang('profile.team')</th>
+          <th scope="col">@lang('profile.apps')</th>
           <th scope="col">@lang('profile.goals')</th>
+          <th scope="col">@lang('profile.assists')</th>
+          <th scope="col">@lang('profile.yellow_cards')</th>
+          <th scope="col">@lang('profile.red_cards')</th>
+
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Azathoth</td>
-          <td>0</td>
-        </tr>
-
-        <tr class="table-info font-weight-bold" style="color:black">
-          <td>@lang('profile.totals')</td>
-          <td>0</td>
+          <td>{{\App\PlayerStat::where('player',$player->username)->count()}}</td>
+          <td>{{\App\PlayerStat::where('player',$player->username)->sum('goals')}}</td>
+          <td>{{\App\PlayerStat::where('player',$player->username)->sum('assists')}}</td>
+          <td>{{\App\PlayerStat::where('player',$player->username)->sum('yellow_cards')}}</td>
+          <td>{{\App\PlayerStat::where('player',$player->username)->sum('red_cards')}}</td>
         </tr>
 
       </tbody>
     </table>
 
     <hr class="border" style="color:white">
-
+    <section hidden>
     <h1 class="text-center" style="color:white">@lang('profile.history')</h1>
     <table class="table table-dark table-striped table-sm mx-auto" style="width:90%">
       <thead class="thead-dark">
@@ -124,6 +138,7 @@
 
       </tbody>
     </table>
+    </section>
 
   </div>
 
